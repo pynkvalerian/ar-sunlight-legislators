@@ -1,4 +1,5 @@
 require 'twitter'
+require 'byebug'
 
 class TwitterAccess
   attr_accessor :client
@@ -13,16 +14,14 @@ class TwitterAccess
   end
 
   def fetch_tweet_for(senator)
-    client.user_timeline(senator, count: 1)
-    # puts tweet.text
-    # p client.text(tweet_id)
-    # tweet_id.each do |tweet|
-    # puts tweet_id
-    # end
+    tweet_id = client.user_timeline(senator, count: 1)
+    tweet = tweet_id[-1].text
+    return tweet
   end
 end
 
 
-tweet = TwitterAccess.new
-p tweet.fetch_tweet_for("pingthedreamer")
+# tweet = TwitterAccess.new
+# tweet.fetch_tweet_for("pingthedreamer")
+
 # client.user_timeline("pingthedreamer")
