@@ -14,5 +14,8 @@ class CongressMember < ActiveRecord::Base
     self.where(gender: string)
   end
 
-end
+  def self.twitter_id
+    self[:twitter_id]
+  end
 
+end
