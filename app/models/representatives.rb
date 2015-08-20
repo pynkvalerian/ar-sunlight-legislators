@@ -1,4 +1,5 @@
-require_relative '../congress_members'
+require_relative '../models/congress_members'
 
-class Representative < CongressMember
+class Rep < CongressMember
+    self.inheritance_column = :title
 end
