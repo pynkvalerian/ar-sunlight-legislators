@@ -14,7 +14,7 @@ class TwitterAccess
   end
 
   def fetch_tweet_for(senator)
-    tweet_id = client.user_timeline(senator, count: 1)
+    tweet_id = client.(senator, count: 1)
     tweet = tweet_id[-1].text
     return tweet
   end
